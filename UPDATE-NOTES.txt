@@ -1,0 +1,36 @@
+RASHCUTS UPDATE V82
+
+Replace these files in the existing project:
+public/index.html
+public/script.js
+public/styles.css
+public/sw.js
+public/admin/index.html
+public/admin/dashboard.html
+public/admin/bookings.html
+public/admin/studio.html
+public/admin/services.html
+public/admin/gallery.html
+public/admin/settings.html
+public/admin/admin.js
+public/admin/admin.css
+server.js
+db/schema.sql
+scripts/migrate-admin-dashboard.js
+
+Booking:
+- Main public booking action opens the intent modal.
+- Opening it is logged as a booking attempt.
+- Continuing to WhatsApp is logged as a stronger contact signal.
+- Call remains available in the public header and uses the same admin-configured phone.
+
+Studio contact:
+- Studio admin page has Personal contact / WhatsApp.
+- Saving it updates the public site's WhatsApp + Call destinations after public data hydration.
+- Existing databases are upgraded by server startup / migration if the phone column is missing.
+
+Mobile:
+- Footer is returned to natural document flow so logo, navigation, booking CTA and legal items remain visible.
+- Desktop admin uses more screen width and larger editorial/body copy.
+
+No .env is included or changed.

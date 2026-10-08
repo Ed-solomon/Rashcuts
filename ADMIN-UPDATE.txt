@@ -1,0 +1,29 @@
+RASHCUTS ADMIN / SPATIAL UI + BOOKING TRACKER
+
+Replace these files in your existing Rashcuts project:
+
+Rashcuts/public/admin/index.html
+Rashcuts/public/admin/admin.css
+Rashcuts/public/admin/admin.js
+Rashcuts/public/admin/dashboard.html          (NEW)
+Rashcuts/public/admin/bookings.html           (NEW)
+Rashcuts/public/admin/studio.html             (NEW)
+Rashcuts/public/admin/services.html           (NEW)
+Rashcuts/public/admin/gallery.html             (NEW)
+Rashcuts/public/admin/settings.html            (NEW)
+Rashcuts/server.js
+Rashcuts/public/script.js
+Rashcuts/db/schema.sql
+Rashcuts/package.json
+Rashcuts/scripts/migrate-admin-dashboard.js    (NEW)
+Rashcuts/.env.example
+
+Do NOT replace your real .env file.
+
+Important:
+- The login server error in the beta was caused by res.cookie(...) being called even though the project does not use cookie-parser. server.js now writes the Set-Cookie header directly.
+- The admin dashboard is now split into real pages: Overview, Bookings, Studio, Services, Gallery and Settings.
+- The left rail is icon-only. Hovering an icon reveals its label; clicking navigates to that page.
+- The public booking flow now records anonymous booking intent events. The tracker counts booking starts separately from WhatsApp/Call contact actions.
+- notification_settings and booking_attempts are created automatically at server startup. The migration script is also provided for an explicit database migration.
+- Run `npm run db:migrate-admin-dashboard` when you want to migrate the database explicitly.

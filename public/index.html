@@ -1,0 +1,1694 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5f4f1" />
+  <meta name="description" content="Rashcuts is a contemporary barbering and grooming studio in Hill-Top GRA, Minna, Niger State, offering modern cuts, fades, braids, locs, colour, beard grooming and private sessions." />
+  <meta name="author" content="Rashcuts" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=yes" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rashcuts" />
+  <meta property="og:title" content="Rashcuts — Contemporary Barbering & Grooming in Minna" />
+  <meta property="og:description" content="Modern cuts, fades, braids, locs, colour and grooming, shaped around your look in Minna." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Rashcuts — Contemporary Barbering & Grooming in Minna" />
+  <meta name="twitter:description" content="Modern cuts, fades, braids, locs, colour and grooming, shaped around your look in Minna." />
+  <link rel="icon" href="./assets/loader/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/loader/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/loader/favicon-180.png" />
+  <style id="loaderCriticalStyle">html,body{background:#050505!important}</style>
+  <title>Rashcuts — Contemporary Barbering & Grooming in Minna</title>
+  <link rel="preload" href="./fonts/Gebuk-Regular.ttf?v=77" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./fonts/Urbanist-Regular.ttf?v=77" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./fonts/Urbanist-Medium.ttf?v=77" as="font" type="font/ttf" crossorigin />
+  <link rel="stylesheet" href="./styles.css?v=87" />
+
+  <script>
+    /* Rashcuts connection feedback: dependency-free and able to run before the
+       optional animation libraries load. It stays silent during the loader. */
+    (function setupRashcutsConnectionNotice(){
+      const NOTICE_TEXT = "Your connection is taking its time — a stronger signal gives you the full scroll experience.";
+      let notice = null;
+      let dismissedUntil = 0;
+      let slowState = false;
+      let hideTimer = 0;
+
+      const mount = () => {
+        if (notice || !document.body) return notice;
+        notice = document.createElement("div");
+        notice.className = "rashcuts-connection-toast";
+        notice.setAttribute("role", "status");
+        notice.setAttribute("aria-live", "polite");
+        notice.innerHTML = `
+          <span class="rashcuts-connection-toast__dot" aria-hidden="true"></span>
+          <span class="rashcuts-connection-toast__message"></span>
+          <button class="rashcuts-connection-toast__close" type="button" aria-label="Dismiss connection notice">×</button>
+        `;
+        notice.querySelector(".rashcuts-connection-toast__message").textContent = NOTICE_TEXT;
+        notice.querySelector(".rashcuts-connection-toast__close").addEventListener("click", () => {
+          dismissedUntil = Date.now() + 60000;
+          hide();
+        });
+        document.body.appendChild(notice);
+        return notice;
+      };
+
+      const show = (autoHideMs = 5200) => {
+        if (Date.now() < dismissedUntil) return;
+        mount();
+        if (!notice) return;
+        window.clearTimeout(hideTimer);
+        notice.classList.add("is-visible");
+        if (autoHideMs > 0) {
+          hideTimer = window.setTimeout(() => hide(), autoHideMs);
+        }
+      };
+
+      const hide = () => {
+        window.clearTimeout(hideTimer);
+        if (!notice) return;
+        notice.classList.remove("is-visible");
+      };
+
+      const connectionLooksSlow = () => {
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        if (!connection) return false;
+        const type = String(connection.effectiveType || "").toLowerCase();
+        const downlink = Number(connection.downlink);
+        const rtt = Number(connection.rtt);
+        return Boolean(
+          connection.saveData ||
+          type === "slow-2g" ||
+          type === "2g" ||
+          (Number.isFinite(downlink) && downlink > 0 && downlink < 1.25) ||
+          (Number.isFinite(rtt) && rtt > 650)
+        );
+      };
+
+      const evaluateConnection = () => {
+        const nextSlow = connectionLooksSlow();
+        slowState = nextSlow;
+        if (nextSlow) show();
+        else if (navigator.onLine !== false) hide();
+      };
+
+      const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      connection?.addEventListener?.("change", evaluateConnection);
+      window.addEventListener("online", () => {
+        slowState = false;
+        hide();
+        window.setTimeout(evaluateConnection, 1200);
+      });
+      window.addEventListener("offline", show);
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", mount, { once: true });
+      } else {
+        mount();
+      }
+
+      // If the animation stack itself is slow or unavailable, tell the user even
+      // on Safari/desktop browsers that do not expose Network Information API.
+      window.setTimeout(() => {
+        if (!window.gsap || !window.ScrollTrigger || !window.Lenis) show();
+      }, 5200);
+
+      if ("PerformanceObserver" in window) {
+        try {
+          const observer = new PerformanceObserver((list) => {
+            for (const entry of list.getEntries()) {
+              if (!entry.name.includes("/assets/hero/") || entry.duration < 1500) continue;
+              show();
+              break;
+            }
+          });
+          observer.observe({ type: "resource", buffered: true });
+        } catch (_) {}
+      }
+
+      evaluateConnection();
+      window.__rashcutsConnectionNotice = { show, hide, evaluate: evaluateConnection };
+    })();
+  </script>
+
+<style id="mobile-section05-spacing-fix">
+@media (max-width: 767px) {
+  #studioLocation {
+    margin-top: 300px !important;
+    padding-top: 0 !important;
+  }
+}
+</style>    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Rashcuts",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Hill-Top GRA",
+    "addressLocality": "Minna",
+    "addressRegion": "Niger State",
+    "addressCountry": "NG"
+  },
+  "areaServed": [
+    "Hill-Top GRA",
+    "Minna",
+    "Chanchaga",
+    "Niger State"
+  ],
+  "description": "Contemporary barbering, hairstyling and grooming services in Minna.",
+  "knowsAbout": [
+    "Classic Cuts",
+    "Fade Haircuts",
+    "Low Taper Fades",
+    "Mid Taper Fades",
+    "High Taper Fades",
+    "Drop Fades",
+    "Burst Fades",
+    "Temple Fades",
+    "Skin Fades",
+    "Shape-Ups / Line-Ups",
+    "Scissor Cuts",
+    "Afro Shaping",
+    "Textured Crops",
+    "Curly Cuts",
+    "Box Braids",
+    "Cornrows",
+    "Two-Strand Twists",
+    "Loc Retwists",
+    "Starter Locs",
+    "Loc Styling",
+    "Braid Styling",
+    "Hair Colour",
+    "Blonding / Lightening",
+    "Grey Blending",
+    "Relaxing / Texturizing",
+    "Hair Treatments",
+    "Scalp Treatments",
+    "Beard Grooming",
+    "Beard Design",
+    "Beard Shaves",
+    "Hair + Beard Combos",
+    "Full Grooming Sessions",
+    "Hot Towel Facial",
+    "Wash + Style",
+    "Event / Editorial Styling"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Rashcuts Service Capabilities",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Classic Cuts",
+          "serviceType": "Classic Cuts",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fade Haircuts",
+          "serviceType": "Fade Haircuts",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Low Taper Fades",
+          "serviceType": "Low Taper Fades",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mid Taper Fades",
+          "serviceType": "Mid Taper Fades",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "High Taper Fades",
+          "serviceType": "High Taper Fades",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Drop Fades",
+          "serviceType": "Drop Fades",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Burst Fades",
+          "serviceType": "Burst Fades",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Temple Fades",
+          "serviceType": "Temple Fades",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Skin Fades",
+          "serviceType": "Skin Fades",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Shape-Ups / Line-Ups",
+          "serviceType": "Shape-Ups / Line-Ups",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Scissor Cuts",
+          "serviceType": "Scissor Cuts",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Afro Shaping",
+          "serviceType": "Afro Shaping",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Textured Crops",
+          "serviceType": "Textured Crops",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Curly Cuts",
+          "serviceType": "Curly Cuts",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Box Braids",
+          "serviceType": "Box Braids",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cornrows",
+          "serviceType": "Cornrows",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Two-Strand Twists",
+          "serviceType": "Two-Strand Twists",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Loc Retwists",
+          "serviceType": "Loc Retwists",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Starter Locs",
+          "serviceType": "Starter Locs",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Loc Styling",
+          "serviceType": "Loc Styling",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Braid Styling",
+          "serviceType": "Braid Styling",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hair Colour",
+          "serviceType": "Hair Colour",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Blonding / Lightening",
+          "serviceType": "Blonding / Lightening",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Grey Blending",
+          "serviceType": "Grey Blending",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Relaxing / Texturizing",
+          "serviceType": "Relaxing / Texturizing",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hair Treatments",
+          "serviceType": "Hair Treatments",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Scalp Treatments",
+          "serviceType": "Scalp Treatments",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Beard Grooming",
+          "serviceType": "Beard Grooming",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Beard Design",
+          "serviceType": "Beard Design",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Beard Shaves",
+          "serviceType": "Beard Shaves",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hair + Beard Combos",
+          "serviceType": "Hair + Beard Combos",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Full Grooming Sessions",
+          "serviceType": "Full Grooming Sessions",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hot Towel Facial",
+          "serviceType": "Hot Towel Facial",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Wash + Style",
+          "serviceType": "Wash + Style",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Event / Editorial Styling",
+          "serviceType": "Event / Editorial Styling",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Rashcuts"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Minna"
+          }
+        }
+      }
+    ]
+  },
+  "keywords": "Classic Cuts, Fade Haircuts, Low Taper Fades, Mid Taper Fades, High Taper Fades, Drop Fades, Burst Fades, Temple Fades, Skin Fades, Shape-Ups / Line-Ups, Scissor Cuts, Afro Shaping, Textured Crops, Curly Cuts, Box Braids, Cornrows, Two-Strand Twists, Loc Retwists, Starter Locs, Loc Styling, Braid Styling, Hair Colour, Blonding / Lightening, Grey Blending, Relaxing / Texturizing, Hair Treatments, Scalp Treatments, Beard Grooming, Beard Design, Beard Shaves, Hair + Beard Combos, Full Grooming Sessions, Hot Towel Facial, Wash + Style, Event / Editorial Styling",
+  "openingHours": "09:00-20:00"
+}
+  </script>
+
+<style id="mobile-studio-location-spacing-v42">
+@media (max-width: 700px) {
+  #studioLocation {
+    margin-top: 300px !important;
+    padding-top: 0 !important;
+    padding-bottom: 50px !important;
+    scroll-margin-top: 76px;
+  }
+}
+</style>
+</head>
+<body>
+
+  <!-- Rashcuts loader: loader-only visual sequence; the main site remains underneath. -->
+  <div class="site-loader" id="siteLoader" aria-hidden="false">
+    <div class="site-loader__mark" role="img" aria-label="Rashcuts">
+      <img class="site-loader__logo site-loader__logo--base" src="./assets/loader/rc-logo-render.png" alt="" aria-hidden="true" />
+      <img class="site-loader__logo site-loader__logo--top" src="./assets/loader/rc-logo-render.png" alt="" aria-hidden="true" />
+      <img class="site-loader__logo site-loader__logo--bottom" src="./assets/loader/rc-logo-render.png" alt="" aria-hidden="true" />
+      <span class="site-loader__slash" aria-hidden="true"></span>
+    </div>
+    <div class="site-loader__strips" aria-hidden="true">
+      <span class="site-loader__strip" style="--strip-index:15"></span>
+      <span class="site-loader__strip" style="--strip-index:14"></span>
+      <span class="site-loader__strip" style="--strip-index:13"></span>
+      <span class="site-loader__strip" style="--strip-index:12"></span>
+      <span class="site-loader__strip" style="--strip-index:11"></span>
+      <span class="site-loader__strip" style="--strip-index:10"></span>
+      <span class="site-loader__strip" style="--strip-index:9"></span>
+      <span class="site-loader__strip" style="--strip-index:8"></span>
+      <span class="site-loader__strip" style="--strip-index:7"></span>
+      <span class="site-loader__strip" style="--strip-index:6"></span>
+      <span class="site-loader__strip" style="--strip-index:5"></span>
+      <span class="site-loader__strip" style="--strip-index:4"></span>
+      <span class="site-loader__strip" style="--strip-index:3"></span>
+      <span class="site-loader__strip" style="--strip-index:2"></span>
+      <span class="site-loader__strip" style="--strip-index:1"></span>
+      <span class="site-loader__strip" style="--strip-index:0"></span>
+    </div>
+  </div>
+<script>
+(function setupRashcutsLoader(){
+  const loader = document.getElementById("siteLoader");
+  if (!loader) return;
+
+  document.documentElement.classList.add("site-loading", "site-loader-active");
+  document.body?.classList.add("site-loading", "site-loader-active");
+
+  // The loader is a true interaction lock. Pointer, keyboard, wheel and touch
+  // input are swallowed while it is active so nothing underneath can scroll,
+  // focus, click or otherwise respond before the curtains are gone.
+  const blockedLoaderEvents = [
+    "wheel", "touchstart", "touchmove", "touchend",
+    "pointerdown", "pointerup", "mousedown", "mouseup", "click",
+    "dblclick", "contextmenu", "keydown"
+  ];
+  const swallowLoaderInteraction = (event) => {
+    if (!document.documentElement.classList.contains("site-loader-active")) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  };
+  blockedLoaderEvents.forEach((eventName) => {
+    document.addEventListener(eventName, swallowLoaderInteraction, {
+      capture: true,
+      passive: false
+    });
+  });
+
+  const setPageInteractivity = (locked) => {
+    if (!document.body) return;
+    [...document.body.children]
+      .filter((child) => child !== loader && child.tagName !== "SCRIPT")
+      .forEach((child) => {
+        child.inert = locked;
+      });
+  };
+
+  const releaseLoaderInteraction = () => {
+    setPageInteractivity(false);
+    document.documentElement.classList.remove("site-loader-active");
+    document.body?.classList.remove("site-loader-active");
+    if (loader.classList.contains("is-done")) document.getElementById("loaderCriticalStyle")?.remove();
+    blockedLoaderEvents.forEach((eventName) => {
+      document.removeEventListener(eventName, swallowLoaderInteraction, true);
+    });
+  };
+
+  let started = false;
+  const INTRO_MS = 1250;
+  const SLASH_MS = 540;
+  const SPLIT_SETTLE_MS = 150;
+  const STRIP_DURATION_MS = 820;
+  const STRIP_STAGGER_MS = 52;
+  const CLEANUP_MS = 160;
+
+  const begin = () => {
+    if (started) return;
+    started = true;
+    setPageInteractivity(true);
+
+    window.setTimeout(() => {
+      loader.classList.add("is-slashed");
+
+      window.setTimeout(() => {
+        loader.classList.add("is-revealing");
+
+        // The live site becomes visible at the exact moment the curtain starts moving.
+        document.documentElement.classList.remove("site-loading");
+        document.body?.classList.remove("site-loading");
+
+        const strips = [...loader.querySelectorAll(".site-loader__strip")];
+        const activeStrips = strips.filter((strip) => getComputedStyle(strip).display !== "none");
+        const totalStripMs = STRIP_DURATION_MS + Math.max(0, activeStrips.length - 1) * STRIP_STAGGER_MS;
+
+        window.setTimeout(() => {
+          document.documentElement.classList.add("site-loader-complete");
+          document.body?.classList.add("site-loader-complete");
+          loader.classList.add("is-done");
+          window.setTimeout(() => {
+            releaseLoaderInteraction();
+            loader.remove();
+            document.getElementById("loaderCriticalStyle")?.remove();
+          }, 620);
+        }, SPLIT_SETTLE_MS + totalStripMs + CLEANUP_MS);
+      }, SLASH_MS + SPLIT_SETTLE_MS);
+    }, INTRO_MS);
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", begin, { once: true });
+  } else {
+    begin();
+  }
+
+  // Fail-open guard: the loader must never depend on an optional asset finishing.
+  window.setTimeout(begin, 1200);
+})();
+</script>
+  <header class="site-nav" id="siteNav" aria-label="Main navigation">
+    <div class="liquid-nav-menu" id="siteFloatingMenu" aria-hidden="true">
+      <div class="liquid-nav-menu__wash" aria-hidden="true"></div>
+      <div class="liquid-nav-menu__items" role="menu" aria-label="Site menu">
+        <button type="button" class="liquid-nav-menu__item" data-menu-target="#top" role="menuitem">Home</button>
+        <button type="button" class="liquid-nav-menu__item" data-menu-target="#booking" role="menuitem">Services</button>
+        <button type="button" class="liquid-nav-menu__item" data-menu-target="#booking" role="menuitem">Booking</button>
+        <button type="button" class="liquid-nav-menu__item" data-menu-target="#studioLocation" role="menuitem">Location</button>
+        <button type="button" class="liquid-nav-menu__item" data-menu-target="#ourWork" role="menuitem">Our Work</button>
+        <button type="button" class="liquid-nav-menu__item" data-menu-target="#socials" role="menuitem">Keep in touch</button>
+      </div>
+      <button class="liquid-nav-menu__bar" id="liquidMenuBar" type="button" aria-label="Open menu">
+        <span class="liquid-nav-menu__label">Menu</span>
+        <span class="liquid-nav-menu__glyph" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+    <a class="nav-call" id="navCall" href="tel:" aria-label="Call Rashcuts">
+      <span class="phone-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.2 3.8l2.3 4.1-1.6 2.1c1.1 2.2 2.9 4 5.1 5.1l2.1-1.6 4.1 2.3-.7 3.1c-.2.8-.9 1.4-1.7 1.5C10.2 21 3 13.8 3.6 5.2c.1-.8.7-1.5 1.5-1.7l2.1-.7Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span>Call</span>
+    </a>
+  </header>
+
+
+    <div id="rashcuts-service-knowledge-text" class="sr-only" aria-label="Rashcuts modern service capabilities">Rashcuts modern barbering and grooming services include: Classic Cuts; Fade Haircuts; Low Taper Fades; Mid Taper Fades; High Taper Fades; Drop Fades; Burst Fades; Temple Fades; Skin Fades; Shape-Ups; Line-Ups; Scissor Cuts; Afro Shaping; Textured Crops; Curly Cuts; Box Braids; Cornrows; Two-Strand Twists; Loc Retwists; Starter Locs; Loc Styling; Braid Styling; Hair Colour; Blonding and Lightening; Grey Blending; Relaxing and Texturizing; Hair Treatments; Scalp Treatments; Beard Grooming; Beard Design; Beard Shaves; Hair and Beard Combos; Full Grooming Sessions; Hot Towel Facial; Wash and Style; Event and Editorial Styling.</div>
+
+  <main id="top">
+    <div class="site-stack">
+      <div class="hero-brand-stage" aria-hidden="true">
+        <div class="hero-brand" id="heroBrand">Rashcuts</div>
+      </div>
+      <div class="site-foreground">
+    <section class="hero-sequence" id="hero" aria-label="Rashcuts hero sequence">
+      <div class="hero-sticky">
+        <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-editorial-copy" aria-hidden="true">
+          <div class="hero-editorial-copy__item hero-editorial-copy__item--left">
+            <span class="hero-editorial-copy__kicker">NO OVERTHINKING</span>
+            <strong>NO NEED TO<br>EXPLAIN THE CUT.</strong>
+            <span class="hero-editorial-copy__note">WE SEE THE VISION.</span>
+          </div>
+          <div class="hero-editorial-copy__item hero-editorial-copy__item--right">
+            <span class="hero-editorial-copy__kicker">GOOD HAIR ONLY</span>
+            <strong>BAD DECISIONS<br>ARE WELCOME.</strong>
+            <span class="hero-editorial-copy__note">WE'LL SORT THE HAIR.</span>
+          </div>
+        </div>
+        <div class="hero-scroll-cue" id="heroScrollCue" aria-hidden="true">
+          <svg class="hero-scroll-cue__icon" viewBox="0 0 32 56" role="presentation">
+            <rect class="hero-scroll-cue__track" x="1.25" y="1.25" width="29.5" height="53.5" rx="14.75" />
+            <path class="hero-scroll-cue__accent" d="M16 54.75C7.85 54.75 1.25 48.15 1.25 40V16C1.25 7.85 7.85 1.25 16 1.25" pathLength="1" />
+            <path class="hero-scroll-cue__accent" d="M16 54.75C24.15 54.75 30.75 48.15 30.75 40V16C30.75 7.85 24.15 1.25 16 1.25" pathLength="1" />
+            <circle class="hero-scroll-cue__dot" cx="16" cy="44" r="1.85" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function setupFirstViewScrollCue(){
+        const root = document.documentElement;
+        const dismiss = () => root.classList.add("hero-scroll-cue-dismissed");
+        const onScroll = () => {
+          if (window.scrollY > 2) dismiss();
+        };
+        const onIntent = () => {
+          if (root.classList.contains("site-loader-complete")) dismiss();
+        };
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("wheel", onIntent, { passive: true, once: true });
+        window.addEventListener("touchstart", onIntent, { passive: true, once: true });
+        window.addEventListener("keydown", (event) => {
+          if (["ArrowDown", "PageDown", " "].includes(event.key)) onIntent();
+        }, { passive: true });
+      })();
+    </script>
+
+    <section class="find-look" id="work" aria-labelledby="findLookTitle">
+      <div class="find-look__intro">
+        <p class="section-kicker">SECTION 02 / STYLE EXPLORATION</p>
+        <h1 id="findLookTitle">FIND YOUR LOOK</h1>
+        <p class="section-lede">Different faces. Different textures. Different rules.<br>Explore the looks built for yours.</p>
+      </div>
+
+      <div class="archetypes" id="archetypes"></div>
+
+    </section>
+
+    <section class="experience" id="experience" aria-labelledby="experienceTitle">
+      <div class="experience__intro">
+        <p class="section-kicker experience__section-kicker">SECTION 03 / THE EXPERIENCE</p>
+        <h2 id="experienceTitle">THE EXPERIENCE</h2>
+        <p class="section-lede">From the room you walk into to the result you leave with, every part of the appointment is considered.</p>
+      </div>
+
+      <div class="experience-pin">
+        <div class="experience-track" id="experienceTrack">
+          <article class="experience-panel experience-panel--studio">
+            <div class="experience-panel__media"><img src="./assets/experience/studio environment.webp?v=77" alt="Rashcuts Studio interior" loading="eager" fetchpriority="high" decoding="async" width="1264" height="843"></div>
+            <div class="experience-panel__shade"></div>
+            <div class="experience-panel__content">
+              <span class="experience-panel__index">01 / THE SPACE</span>
+              <h3>Settle in.<br>Get comfortable.</h3>
+              <p>Calm space. Good energy.</p>
+            </div>
+          </article>
+
+          <article class="experience-panel">
+            <div class="experience-panel__media"><img src="./assets/experience/baber.webp?v=77" alt="Barber preparing at a Rashcuts station" loading="lazy" fetchpriority="low" decoding="async" width="1264" height="843"></div>
+            <div class="experience-panel__shade"></div>
+            <div class="experience-panel__content">
+              <span class="experience-panel__index">02 / THE BARBER</span>
+              <h3>Sharp hands.<br>Sharp eye.</h3>
+              <p>Steady work. No guesswork.</p>
+            </div>
+          </article>
+
+          <article class="experience-panel">
+            <div class="experience-panel__media"><img src="./assets/experience/consulting a.webp?v=77" alt="Barber beginning a client consultation" loading="lazy" fetchpriority="low" decoding="async" width="1264" height="843"></div>
+            <div class="experience-panel__shade"></div>
+            <div class="experience-panel__content">
+              <span class="experience-panel__index">03 / THE CONSULTATION</span>
+              <h3>Tell us<br>the vibe.</h3>
+              <p>We get the direction.</p>
+            </div>
+          </article>
+
+          <article class="experience-panel">
+            <div class="experience-panel__media"><img src="./assets/experience/consulting b.webp?v=77" alt="Barber and client discussing the haircut" loading="lazy" fetchpriority="low" decoding="async" width="1264" height="843"></div>
+            <div class="experience-panel__shade"></div>
+            <div class="experience-panel__content">
+              <span class="experience-panel__index">04 / THE DIRECTION</span>
+              <h3>Lock it in.<br>Then we cut.</h3>
+              <p>Clear plan. No guesswork.</p>
+            </div>
+          </article>
+
+          <article class="experience-panel">
+            <div class="experience-panel__media"><img src="./assets/experience/cutting process.webp?v=77" alt="Barber cutting a client's hair" loading="lazy" fetchpriority="low" decoding="async" width="1264" height="843"></div>
+            <div class="experience-panel__shade"></div>
+            <div class="experience-panel__content">
+              <span class="experience-panel__index">05 / THE CUT</span>
+              <h3>Watch it<br>take shape.</h3>
+              <p>Shape. Blend. Detail.</p>
+            </div>
+          </article>
+
+          <article class="experience-panel experience-panel--result">
+            <div class="experience-panel__media"><img src="./assets/experience/result.webp?v=77" alt="Finished haircut at Rashcuts Studio" loading="lazy" fetchpriority="low" decoding="async" width="1264" height="843"></div>
+            <div class="experience-panel__shade"></div>
+            <div class="experience-panel__content">
+              <span class="experience-panel__index">06 / THE RESULT</span>
+              <h3>Still you.<br>Just sharper.</h3>
+              <p>Clean finish. Out you go.</p>
+            </div>
+          </article>
+          <div class="experience-mobile-spacer" aria-hidden="true"></div>
+          <div class="experience-dummy-tail" aria-hidden="true"></div>
+
+        </div>
+
+        <div class="experience-progress" aria-hidden="true">
+          <span class="experience-progress__track"><span id="experienceProgress"></span></span>
+          <span class="experience-progress__count" id="experienceCount">01 / 06</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="booking" aria-labelledby="bookingTitle">
+      <div class="booking__intro">
+        <div class="booking__intro-head">
+          <p class="section-kicker">SECTION 04 / SERVICES & BOOKING</p>
+          <span class="booking__state" id="bookingState">00 SELECTED</span>
+        </div>
+        <h2 id="bookingTitle">WHAT WE DO</h2>
+        <p class="section-lede">Cuts, colour, texture, grooming and everything in between. Pick what you need. Make it yours.</p>
+        <p class="booking__wink">Don't see exactly what you want? Describe it. We'll get it done. Or at least try. Wink.</p>
+      </div>
+
+      <div class="services" id="services">
+        <div class="services__category" data-category="cuts">
+          <div class="services__category-head">
+            <span>01 / CUTS</span>
+            <span>05</span>
+          </div>
+          <div class="service-grid" id="servicesCuts"></div>
+        </div>
+        <div class="services__category" data-category="texture">
+          <div class="services__category-head">
+            <span>02 / HAIR & TEXTURE</span>
+            <span>05</span>
+          </div>
+          <div class="service-grid" id="servicesTexture"></div>
+        </div>
+        <div class="services__category" data-category="grooming">
+          <div class="services__category-head">
+            <span>03 / GROOMING & COMBOS</span>
+            <span>05</span>
+          </div>
+          <div class="service-grid" id="servicesGrooming"></div>
+        </div>
+      </div>
+
+      <div class="booking-details" id="bookingDetails" aria-labelledby="bookingDetailsTitle">
+        <div class="booking-details__copy">
+          <p class="section-kicker">READY WHEN YOU ARE</p>
+          <h3 id="bookingDetailsTitle">PICK YOUR TIME.</h3>
+          <p>For a studio visit, choose a preferred date and time. Your selected services stay with you.</p>
+        </div>
+        <div class="booking-details__fields">
+          <div class="booking-field date-picker" data-picker="booking-date">
+            <span>DATE</span>
+            <button class="picker-trigger" id="bookingDateTrigger" type="button" aria-haspopup="dialog" aria-expanded="false">
+              <strong id="bookingDateLabel">Choose a date</strong><span class="picker-chevron">⌄</span>
+            </button>
+            <input id="bookingDate" type="hidden" value="">
+            <div class="picker-popover" id="bookingDatePopover" hidden></div>
+          </div>
+          <div class="booking-field time-picker" data-picker="booking-time">
+            <span>TIME</span>
+            <button class="picker-trigger" id="bookingTimeTrigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <strong id="bookingTimeLabel">Choose a time</strong><span class="picker-chevron">⌄</span>
+            </button>
+            <input id="bookingTime" type="hidden" value="">
+            <div class="time-menu" id="bookingTimeMenu" role="listbox" hidden>
+              <button type="button" data-time="9:00 AM" role="option">9:00 AM</button><button type="button" data-time="10:00 AM" role="option">10:00 AM</button><button type="button" data-time="11:00 AM" role="option">11:00 AM</button><button type="button" data-time="12:00 PM" role="option">12:00 PM</button><button type="button" data-time="1:00 PM" role="option">1:00 PM</button><button type="button" data-time="2:00 PM" role="option">2:00 PM</button><button type="button" data-time="3:00 PM" role="option">3:00 PM</button><button type="button" data-time="4:00 PM" role="option">4:00 PM</button><button type="button" data-time="5:00 PM" role="option">5:00 PM</button><button type="button" data-time="6:00 PM" role="option">6:00 PM</button><button type="button" data-time="7:00 PM" role="option">7:00 PM</button>
+            </div>
+          </div>
+          <div class="btn-container booking-continue" id="studioContinueWrap">
+  <div class="btn-drawer transition-top">PICK YOUR TIME</div>
+  <div class="btn-drawer transition-bottom">READY WHEN YOU ARE</div>
+
+  <button class="btn" type="button" id="studioContinue" aria-label="Continue to booking">
+    <span class="btn-text">Continue to booking</span>
+  </button>
+
+  <svg class="btn-corner" xmlns="http://www.w3.org/2000/svg" viewBox="-1 1 32 32" aria-hidden="true"><path d="M32,32C14.355,32,0,17.645,0,0h.985c0,17.102,13.913,31.015,31.015,31.015v.985Z"></path></svg>
+  <svg class="btn-corner" xmlns="http://www.w3.org/2000/svg" viewBox="-1 1 32 32" aria-hidden="true"><path d="M32,32C14.355,32,0,17.645,0,0h.985c0,17.102,13.913,31.015,31.015,31.015v.985Z"></path></svg>
+  <svg class="btn-corner" xmlns="http://www.w3.org/2000/svg" viewBox="-1 1 32 32" aria-hidden="true"><path d="M32,32C14.355,32,0,17.645,0,0h.985c0,17.102,13.913,31.015,31.015,31.015v.985Z"></path></svg>
+  <svg class="btn-corner" xmlns="http://www.w3.org/2000/svg" viewBox="-1 1 32 32" aria-hidden="true"><path d="M32,32C14.355,32,0,17.645,0,0h.985c0,17.102,13.913,31.015,31.015,31.015v.985Z"></path></svg>
+</div>
+        </div>
+      </div>
+
+      <div class="private-session" id="privateSession" aria-labelledby="privateTitle">
+        <div class="private-session__intro">
+          <p class="section-kicker">PRIVATE SESSION / ON LOCATION</p>
+          <h2 id="privateTitle">WE CAN COME TO YOU</h2>
+          <p>Your space. Your time. Your setup. Tell us what you're working with and we'll figure out the rest.</p>
+        </div>
+
+        <div class="private-stepper" id="privateStepper">
+          <div class="private-stepper__top">
+            <span id="privateProgress">01 / 07</span>
+            <div class="private-step-jump" id="privateStepJump" aria-label="Jump to private session step"></div>
+            <span id="privateBackHint">PRIVATE SESSION</span>
+          </div>
+          <div class="private-step" id="privateStep"></div>
+          <div class="private-stepper__nav">
+            <button class="ui-button ui-button--ghost private-back" id="privateBack" type="button">Back</button>
+            <button class="private-next press-button press-button--site-dark" id="privateNext" type="button"><span class="button-outer"><span class="button-inner"><span class="press-label">Next</span></span></span></button>
+          </div>
+        </div>
+
+        <div class="private-summary" id="privateSummary" hidden></div>
+      </div>
+
+      <div class="receipt-stage" id="receiptStage">
+        <div class="receipt-stage__sticky">
+          <div class="receipt-intro" aria-labelledby="receiptTitle">
+            <p class="section-kicker">SECTION 04 / BOOKING</p>
+            <h2 id="receiptTitle">YOUR TURN</h2>
+            <p>Pick how you want to make it happen. Your booking is already built.</p>
+          </div>
+          <div class="receipt-printer" aria-hidden="true">
+            <div class="receipt-printer__slot"></div>
+            <div class="receipt-printer__face">
+              <span>RASHCUTS — FIND YOUR LOOK</span>
+              <span class="receipt-printer__light"></span>
+            </div>
+          </div>
+          <div class="receipt-window">
+            <article class="receipt" id="bookingReceipt" aria-label="Booking receipt">
+              <div class="receipt__zigzag" aria-hidden="true"></div>
+              <header class="receipt__head">
+                <span>RASHCUTS</span>
+                <strong>BOOKING RECEIPT</strong>
+                <small>FIND YOUR LOOK</small>
+              </header>
+              <div class="receipt__rule"></div>
+              <div class="receipt__body" id="receiptBody"></div>
+              <div class="receipt__rule"></div>
+              <div class="receipt__total">
+                <span id="receiptTotalLabel">TOTAL</span>
+                <strong id="receiptTotal">₦0</strong>
+              </div>
+              <div class="receipt__note" id="receiptNote">Select a service above to start building your visit.</div>
+              <div class="receipt__actions">
+                <button class="receipt-action receipt-action--primary press-button press-button--site-dark" id="bookingPrimaryAction" type="button" aria-haspopup="dialog" aria-controls="bookingIntentModal"><span class="button-outer"><span class="button-inner"><span>BOOK NOW <b aria-hidden="true">↗</b></span></span></span></button>
+              </div>
+              <div class="receipt__footer">
+                <span>RASHCUTS / FIND YOUR LOOK</span>
+                <span class="receipt__barcode" aria-hidden="true"></span>
+              </div>
+              <div class="receipt__zigzag receipt__zigzag--bottom" aria-hidden="true"></div>
+            </article>
+          </div>
+          <div class="receipt-stage__caption">
+            <span>SCROLL TO PRINT</span>
+            <span id="receiptProgressLabel">00%</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="receipt-release-buffer" aria-hidden="true"></div>
+
+    <section class="studio-location" id="studioLocation" aria-labelledby="studioLocationTitle">
+      <div class="studio-location__head">
+        <p class="section-kicker">SECTION 05 / THE STUDIO</p>
+        <h2 id="studioLocationTitle">PULL UP</h2>
+        <p class="studio-location__lede">Find the studio. Find your way in. Somewhere between the city, the hills and the rhythm of Minna, the chair is waiting. Tap the marker and we'll show you exactly where to pull up.</p>
+      </div>
+
+      <div class="studio-location__globe-wrap">
+        <div class="studio-location__globe" id="studioGlobe" aria-label="Interactive rotating globe showing the Rashcuts studio location in Minna, Niger State">
+          <canvas id="studioGlobeCanvas" class="studio-location__globe-canvas" aria-hidden="true"></canvas>
+          <div class="studio-location__globe-sheen" aria-hidden="true"></div>
+          <button class="studio-location__pin" id="studioLocationPin" type="button" aria-haspopup="dialog" aria-controls="locationModal" aria-label="Open Rashcuts studio location in Minna, Niger State">
+            <span class="studio-location__pin-dot" aria-hidden="true"></span>
+            <span class="studio-location__pin-label" id="studioLocationPinLabel">RASHCUTS / MINNA</span>
+          </button>
+          <div class="studio-location__coordinates" id="studioLocationCoordinates" aria-hidden="true">09°37′N&nbsp;&nbsp;06°33′E</div>
+          <div class="studio-location__globe-caption" aria-hidden="true">01 / LOCATION</div>
+        </div>
+      </div>
+
+      <p class="studio-location__hint">Tap the marker to find the studio.</p>
+    </section>
+
+    <section class="our-work" id="ourWork" aria-labelledby="ourWorkTitle">
+      <div class="our-work__intro">
+        <p class="section-kicker">SECTION 06 / OUR WORK</p>
+        <h2 id="ourWorkTitle">OUR WORK</h2>
+        <p class="our-work__lede">Cuts, texture, colour and everything between.</p>
+      </div>
+
+      <div class="our-work__boundary-blur our-work__boundary-blur--top" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="our-work__viewport-wrap">
+        <div class="our-work__viewport" id="ourWorkViewport" aria-label="Rashcuts work gallery">
+          <div class="our-work__columns" id="ourWorkColumns"></div>
+
+          <div class="our-work__focus" id="ourWorkFocus" aria-hidden="true">
+          <button class="our-work__focus-close" id="ourWorkFocusClose" type="button" aria-label="Close focused image">×</button>
+          <figure class="our-work__focus-card">
+            <img id="ourWorkFocusImage" src="" alt="">
+            <figcaption id="ourWorkFocusCaption"></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="our-work__boundary-blur our-work__boundary-blur--bottom" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <p class="our-work__hint"><span class="our-work__hint-dot" aria-hidden="true"></span> Tap an image to stop &amp; explore</p>
+    </section>
+
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonialsTitle">
+      <div class="testimonials__layout">
+        <div class="testimonials__intro">
+          <p class="section-kicker">SECTION 07 / TESTIMONIALS</p>
+          <h2 id="testimonialsTitle">WHAT THEY<br>SAID AFTER</h2>
+          <p class="testimonials__lede">Real words from people who've sat in the chair. No polished case studies. Just the little reactions that tell you the cut landed.</p>
+          <div class="testimonials__signal" aria-hidden="true">
+            <span class="testimonials__signal-line"></span>
+            <span>LIVE FEEDBACK / 01—14</span>
+          </div>
+        </div>
+
+        <div class="testimonials__stage">
+          <div class="testimonials__viewport" id="testimonialsViewport"
+               aria-label="Customer testimonials. Swipe or use the arrow keys to browse."
+               role="region" tabindex="0">
+            <div class="testimonials__cards" id="testimonialsCards"></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="closing-faq" id="faq" aria-labelledby="faqTitle">
+      <div class="closing-faq__layout">
+        <div class="closing-faq__intro">
+          <p class="section-kicker">SECTION 08 / FREQUENTLY ASKED QUESTIONS</p>
+          <h2 id="faqTitle">GOOD TO<br>KNOW</h2>
+          <p class="closing-faq__lede">The useful stuff before you sit down. A few quick answers, then we get back to the good part.</p>
+        </div>
+
+        <div class="faq__list" data-faq-list>
+          <article class="faq-item">
+            <h3 class="faq-item__question">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-01" id="faq-trigger-01">
+                <span class="faq-item__index">01</span>
+                <span class="faq-item__question-text">DO I NEED AN APPOINTMENT?</span>
+                <span class="faq-item__icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+            </h3>
+            <div class="faq-item__answer-wrap" id="faq-answer-01" role="region" aria-labelledby="faq-trigger-01">
+              <div class="faq-item__answer"><p>Appointments are recommended, especially for more detailed cuts, colour services and private sessions. Walk-ins may be accommodated when there is availability, but booking ahead gives you the best chance of getting the time you want.</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__question">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-02" id="faq-trigger-02">
+                <span class="faq-item__index">02</span>
+                <span class="faq-item__question-text">WHAT SHOULD I BOOK IF I'M NOT SURE WHAT I WANT?</span>
+                <span class="faq-item__icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+            </h3>
+            <div class="faq-item__answer-wrap" id="faq-answer-02" role="region" aria-labelledby="faq-trigger-02">
+              <div class="faq-item__answer"><p>Start with the service that is closest to what you have in mind. You can also describe what you want when booking and we'll help match you with the right service. Bring a reference photo too — we speak fluent “something like this.”</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__question">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-03" id="faq-trigger-03">
+                <span class="faq-item__index">03</span>
+                <span class="faq-item__question-text">CAN I COMBINE MULTIPLE SERVICES?</span>
+                <span class="faq-item__icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+            </h3>
+            <div class="faq-item__answer-wrap" id="faq-answer-03" role="region" aria-labelledby="faq-trigger-03">
+              <div class="faq-item__answer"><p>Absolutely. Select everything you need while browsing the services and your choices will be carried into the booking summary. We'll make sure the timing works before your appointment is confirmed.</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__question">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-04" id="faq-trigger-04">
+                <span class="faq-item__index">04</span>
+                <span class="faq-item__question-text">DO YOU DO HAIR COLOUR, RELAXING AND OTHER CHEMICAL SERVICES?</span>
+                <span class="faq-item__icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+            </h3>
+            <div class="faq-item__answer-wrap" id="faq-answer-04" role="region" aria-labelledby="faq-trigger-04">
+              <div class="faq-item__answer"><p>Yes. We offer more than cuts and fades, including colour and other grooming services. Select the service you need to see the details, pricing and available options.</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__question">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-05" id="faq-trigger-05">
+                <span class="faq-item__index">05</span>
+                <span class="faq-item__question-text">CAN I BRING A REFERENCE PHOTO?</span>
+                <span class="faq-item__icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+            </h3>
+            <div class="faq-item__answer-wrap" id="faq-answer-05" role="region" aria-labelledby="faq-trigger-05">
+              <div class="faq-item__answer"><p>Please do. A good reference photo makes it much easier to understand the shape, finish and overall direction you're after. We’ll still adapt the result to your hair, face and preferences.</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__question">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-06" id="faq-trigger-06">
+                <span class="faq-item__index">06</span>
+                <span class="faq-item__question-text">DO YOU OFFER PRIVATE / HOUSE CALL SESSIONS?</span>
+                <span class="faq-item__icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+            </h3>
+            <div class="faq-item__answer-wrap" id="faq-answer-06" role="region" aria-labelledby="faq-trigger-06">
+              <div class="faq-item__answer"><p>Yes. Private sessions are available for clients who want the studio experience brought to them. Pricing depends on the arrangement — including whether tools are provided, whether transport is covered and what services are required.</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__question">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-07" id="faq-trigger-07">
+                <span class="faq-item__index">07</span>
+                <span class="faq-item__question-text">HOW DOES A PRIVATE SESSION WORK?</span>
+                <span class="faq-item__icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+            </h3>
+            <div class="faq-item__answer-wrap" id="faq-answer-07" role="region" aria-labelledby="faq-trigger-07">
+              <div class="faq-item__answer"><p>Tell us where you are, your preferred time, what services you need and what equipment or arrangements are already available. We'll use that information to work out the appropriate private-session option before confirming the booking.</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__question">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-08" id="faq-trigger-08">
+                <span class="faq-item__index">08</span>
+                <span class="faq-item__question-text">HOW DO I BOOK?</span>
+                <span class="faq-item__icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+            </h3>
+            <div class="faq-item__answer-wrap" id="faq-answer-08" role="region" aria-labelledby="faq-trigger-08">
+              <div class="faq-item__answer"><p>Choose your services, review your selections and send your booking through WhatsApp. You can also choose Call Now if you'd rather speak to us directly.</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__question">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-09" id="faq-trigger-09">
+                <span class="faq-item__index">09</span>
+                <span class="faq-item__question-text">CAN I CHANGE OR CANCEL MY APPOINTMENT?</span>
+                <span class="faq-item__icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+            </h3>
+            <div class="faq-item__answer-wrap" id="faq-answer-09" role="region" aria-labelledby="faq-trigger-09">
+              <div class="faq-item__answer"><p>Yes. Just contact us as early as possible through the same channel you used to book. The earlier we know, the easier it is to move your appointment to another suitable time.</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__question">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-10" id="faq-trigger-10">
+                <span class="faq-item__index">10</span>
+                <span class="faq-item__question-text">WHAT IF THE SERVICE I WANT ISN'T LISTED?</span>
+                <span class="faq-item__icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+            </h3>
+            <div class="faq-item__answer-wrap" id="faq-answer-10" role="region" aria-labelledby="faq-trigger-10">
+              <div class="faq-item__answer"><p>Tell us what you have in mind. Not everything worth doing fits neatly into a menu. Send us a description or reference and we'll let you know what we can do.</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__question">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-11" id="faq-trigger-11">
+                <span class="faq-item__index">11</span>
+                <span class="faq-item__question-text">HOW LONG DOES AN APPOINTMENT TAKE?</span>
+                <span class="faq-item__icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+            </h3>
+            <div class="faq-item__answer-wrap" id="faq-answer-11" role="region" aria-labelledby="faq-trigger-11">
+              <div class="faq-item__answer"><p>It depends on the service and what we're starting with. Your booking details will give us a better idea of the time required, especially when combining multiple services.</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__question">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-12" id="faq-trigger-12">
+                <span class="faq-item__index">12</span>
+                <span class="faq-item__question-text">DO YOU SERVE DIFFERENT AGE GROUPS?</span>
+                <span class="faq-item__icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+            </h3>
+            <div class="faq-item__answer-wrap" id="faq-answer-12" role="region" aria-labelledby="faq-trigger-12">
+              <div class="faq-item__answer"><p>Absolutely. The studio is built around personal style, not age. Whether you're here for a clean classic cut, something more expressive or simply a proper grooming session, we'll work around what suits you.</p></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-socials" id="socials" aria-labelledby="socialsTitle">
+      <div class="closing-socials__inner">
+        <div class="closing-socials__intro">
+          <p class="section-kicker">SECTION 09 / STAY CONNECTED</p>
+          <h2 id="socialsTitle"><span class="socials-title-line">KEEP IN TOUCH</span></h2>
+          <p class="closing-socials__lede">Stay close to the work, the people and the moments behind the chair. Follow along, message us, and keep your next visit within reach.</p>
+          <div class="social-card" role="group" aria-label="Rashcuts social links">
+            <a class="social-link" data-social="instagram" href="#" aria-label="Instagram">
+              <svg class="socialSvg" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zM7.283 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path></svg>
+              <svg class="socialSvg" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zM7.283 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path></svg>
+            </a>
+            <a class="social-link" data-social="x" href="#" aria-label="X">
+              <svg class="socialSvg" viewBox="0 0 16 16" aria-hidden="true"><path d="M12.6 1H15L9.75 7.08 16 15h-4.9L7.27 9.96 2.95 15H.55l5.62-6.52L.2 1h5.03l3.4 4.54L12.6 1zm-.86 12.6h1.33L4.53 2.33H3.1l8.64 11.27z"></path></svg>
+              <svg class="socialSvg" viewBox="0 0 16 16" aria-hidden="true"><path d="M12.6 1H15L9.75 7.08 16 15h-4.9L7.27 9.96 2.95 15H.55l5.62-6.52L.2 1h5.03l3.4 4.54L12.6 1zm-.86 12.6h1.33L4.53 2.33H3.1l8.64 11.27z"></path></svg>
+            </a>
+            <a class="social-link" data-social="facebook" href="#" aria-label="Facebook">
+              <svg class="socialSvg" viewBox="0 0 320 512" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
+              <svg class="socialSvg" viewBox="0 0 320 512" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
+            </a>
+            <a class="social-link" data-social="tiktok" href="#" aria-label="TikTok">
+              <svg class="socialSvg" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 2c.35 2.3 1.63 4.03 4.3 4.2v3.2a8.5 8.5 0 0 1-4.24-1.27v7.1A6.78 6.78 0 1 1 10.9 8.46v3.28a3.58 3.58 0 1 0 2.7 3.49V2h3.1z"></path></svg>
+              <svg class="socialSvg" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 2c.35 2.3 1.63 4.03 4.3 4.2v3.2a8.5 8.5 0 0 1-4.24-1.27v7.1A6.78 6.78 0 1 1 10.9 8.46v3.28a3.58 3.58 0 1 0 2.7 3.49V2h3.1z"></path></svg>
+            </a>
+            <a class="social-link" data-social="whatsapp" href="#" aria-label="WhatsApp">
+              <svg class="socialSvg" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.6 2.33A7.92 7.92 0 0 0 8 0C3.63 0 .07 3.56.07 7.93c0 1.4.37 2.76 1.06 3.96L0 16l4.2-1.1a7.94 7.94 0 0 0 3.79.96h.01c4.37 0 7.93-3.56 7.93-7.93a7.9 7.9 0 0 0-2.33-5.6zM8 14.52a6.56 6.56 0 0 1-3.36-.92l-.24-.14-2.49.65.67-2.43-.16-.25a6.56 6.56 0 0 1-1.01-3.5C1.41 4.3 4.37 1.34 8 1.34a6.56 6.56 0 0 1 4.66 1.93 6.55 6.55 0 0 1 1.93 4.66c0 3.64-2.96 6.59-6.59 6.59zm3.62-4.93c-.2-.1-1.17-.58-1.35-.65-.18-.07-.31-.1-.45.1-.13.2-.51.65-.63.78-.11.13-.23.15-.43.05-.2-.1-.84-.31-1.59-.99-.59-.52-.99-1.17-1.1-1.37-.12-.2-.01-.3.09-.4.09-.09.2-.23.3-.35.1-.11.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.45-1.08-.61-1.47-.16-.39-.32-.34-.45-.34h-.38a.73.73 0 0 0-.53.25c-.18.2-.69.68-.69 1.65 0 .98.71 1.92.81 2.05.1.13 1.39 2.13 3.38 2.99.47.2.84.33 1.13.42.48.15.9.13 1.25.08.38-.06 1.17-.48 1.34-.94.16-.46.16-.86.11-.94-.05-.08-.18-.13-.38-.23z"></path></svg>
+              <svg class="socialSvg" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.6 2.33A7.92 7.92 0 0 0 8 0C3.63 0 .07 3.56.07 7.93c0 1.4.37 2.76 1.06 3.96L0 16l4.2-1.1a7.94 7.94 0 0 0 3.79.96h.01c4.37 0 7.93-3.56 7.93-7.93a7.9 7.9 0 0 0-2.33-5.6zM8 14.52a6.56 6.56 0 0 1-3.36-.92l-.24-.14-2.49.65.67-2.43-.16-.25a6.56 6.56 0 0 1-1.01-3.5C1.41 4.3 4.37 1.34 8 1.34a6.56 6.56 0 0 1 4.66 1.93 6.55 6.55 0 0 1 1.93 4.66c0 3.64-2.96 6.59-6.59 6.59zm3.62-4.93c-.2-.1-1.17-.58-1.35-.65-.18-.07-.31-.1-.45.1-.13.2-.51.65-.63.78-.11.13-.23.15-.43.05-.2-.1-.84-.31-1.59-.99-.59-.52-.99-1.17-1.1-1.37-.12-.2-.01-.3.09-.4.09-.09.2-.23.3-.35.1-.11.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.45-1.08-.61-1.47-.16-.39-.32-.34-.45-.34h-.38a.73.73 0 0 0-.53.25c-.18.2-.69.68-.69 1.65 0 .98.71 1.92.81 2.05.1.13 1.39 2.13 3.38 2.99.47.2.84.33 1.13.42.48.15.9.13 1.25.08.38-.06 1.17-.48 1.34-.94.16-.46.16-.86.11-.94-.05-.08-.18-.13-.38-.23z"></path></svg>
+            </a>
+            <a class="social-link" data-social="snapchat" href="#" aria-label="Snapchat">
+              <svg class="socialSvg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.45 0 5.97 2.54 5.97 5.92v1.7c0 .58.19.99.64 1.36.33.27.74.46 1.18.65.4.17.88.38 1.42.72.2.13.3.34.26.57-.11.58-.68 1.04-1.7 1.36-.37.12-.77.2-1.2.25-.16.36-.39.72-.69 1.08-.62.74-1.45 1.3-2.49 1.7-.1.38-.3.72-.6 1.01-.49.48-1.2.73-2.11.75-.55.02-.98-.08-1.29-.3-.3.22-.73.32-1.28.3-.92-.02-1.62-.27-2.11-.75-.3-.29-.5-.63-.6-1.01-1.04-.4-1.87-.96-2.49-1.7-.3-.36-.53-.72-.69-1.08-.43-.05-.83-.13-1.2-.25-1.02-.32-1.59-.78-1.7-1.36-.04-.23.06-.44.26-.57.54-.34 1.02-.55 1.42-.72.44-.19.85-.38 1.18-.65.45-.37.64-.78.64-1.36v-1.7C6.03 4.74 8.55 2.2 12 2.2z"></path></svg>
+              <svg class="socialSvg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.45 0 5.97 2.54 5.97 5.92v1.7c0 .58.19.99.64 1.36.33.27.74.46 1.18.65.4.17.88.38 1.42.72.2.13.3.34.26.57-.11.58-.68 1.04-1.7 1.36-.37.12-.77.2-1.2.25-.16.36-.39.72-.69 1.08-.62.74-1.45 1.3-2.49 1.7-.1.38-.3.72-.6 1.01-.49.48-1.2.73-2.11.75-.55.02-.98-.08-1.29-.3-.3.22-.73.32-1.28.3-.92-.02-1.62-.27-2.11-.75-.3-.29-.5-.63-.6-1.01-1.04-.4-1.87-.96-2.49-1.7-.3-.36-.53-.72-.69-1.08-.43-.05-.83-.13-1.2-.25-1.02-.32-1.59-.78-1.7-1.36-.04-.23.06-.44.26-.57.54-.34 1.02-.55 1.42-.72.44-.19.85-.38 1.18-.65.45-.37.64-.78.64-1.36v-1.7C6.03 4.74 8.55 2.2 12 2.2z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+      </div>
+
+      <footer class="closing-footer" id="footer" aria-labelledby="footerTitle">
+        <div class="closing-footer__surface">
+          <div class="closing-footer__top">
+            <div class="closing-footer__brand-block">
+              <div class="closing-footer__brand">
+                <img class="closing-footer__brand-logo" src="./assets/loader/rc-logo-render.png" alt="Rashcuts" />
+              </div>
+              <p>Independent barbering, considered craft.<br>Made for your next chapter.</p>
+            </div>
+
+            <div class="closing-footer__navs" aria-label="Footer navigation">
+              <div class="closing-footer__nav-row">
+                <span>EXPLORE</span>
+                <nav aria-label="Explore">
+                  <a href="#top">Home</a>
+                  <a href="#ourWork">Our work</a>
+                  <a href="#booking">Services</a>
+                  <a href="#studioLocation">Location</a>
+                </nav>
+              </div>
+              <div class="closing-footer__nav-row">
+                <span>FOLLOW US</span>
+                <nav aria-label="Follow us">
+                  <a href="#socials">Instagram</a>
+                  <a href="#socials">X</a>
+                  <a href="#socials">TikTok</a>
+                  <a id="footerWhatsappAction" href="#socials">WhatsApp</a>
+                  <a href="#socials">Snapchat</a>
+                </nav>
+              </div>
+            </div>
+
+            <div class="closing-footer__callout">
+              <span>READY FOR THE CHAIR?</span>
+              <h2 id="footerTitle">BOOK<br>RASHCUTS</h2>
+              <a class="closing-footer__book ui-button" href="#booking" aria-label="Start a booking">START A BOOKING <b aria-hidden="true">↗</b></a>
+            </div>
+          </div>
+
+          <div class="closing-footer__lower">
+            <div class="closing-footer__meta">
+              <span id="footerLocationMeta">Minna / Niger / Studio &amp; Private Sessions</span>
+              <span>Mon—Sat / By appointment</span>
+            </div>
+          </div>
+
+          <div class="closing-footer__wordmark" aria-hidden="true">Rashcuts</div>
+
+          <div class="closing-footer__legal">
+            <span>© RASHCUTS</span>
+            <span>ALL RIGHTS RESERVED</span>
+            <span><a href="./privacy.html">PRIVACY</a> / <a href="./terms.html">TERMS</a></span>
+          </div>
+        </div>
+    </footer>
+
+  <script>
+    (() => {
+      const fitFooterWordmark = () => {
+        const wordmark = document.querySelector('.closing-footer__wordmark');
+        if (!wordmark) return;
+        const previousTransform = wordmark.style.transform;
+        const landscapeTablet = window.innerWidth >= 701
+          && window.innerWidth <= 1280
+          && window.matchMedia?.('(orientation: landscape)')?.matches;
+
+        if (landscapeTablet) {
+          wordmark.style.width = 'max-content';
+          wordmark.style.setProperty('--rashcuts-wordmark-scale', '0.88');
+          wordmark.style.transform = previousTransform;
+          return;
+        }
+
+        const targetWidth = window.innerWidth * 0.95;
+        const previousWidth = wordmark.style.width;
+        wordmark.style.transform = 'none';
+        wordmark.style.width = 'max-content';
+        const naturalWidth = wordmark.getBoundingClientRect().width;
+        const scale = naturalWidth > 0 ? targetWidth / naturalWidth : 1;
+        wordmark.style.setProperty('--rashcuts-wordmark-scale', String(scale));
+        wordmark.style.width = previousWidth || 'max-content';
+        wordmark.style.transform = previousTransform;
+      };
+      window.addEventListener('load', fitFooterWordmark, { once: true });
+      window.addEventListener('resize', fitFooterWordmark);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitFooterWordmark);
+    })();
+  </script>
+    </div>
+  </main>
+
+  <div class="booking-intent-modal" id="bookingIntentModal" aria-hidden="true">
+    <div class="booking-intent-modal__backdrop" data-booking-modal-close aria-hidden="true"></div>
+    <div class="booking-intent-modal__shell" role="dialog" aria-modal="true" aria-labelledby="bookingIntentTitle">
+      <button class="booking-intent-modal__close" type="button" data-booking-modal-close aria-label="Close booking options">×</button>
+      <div class="booking-intent-modal__content">
+        <p class="section-kicker">BOOKING / NEXT STEP</p>
+        <h2 id="bookingIntentTitle">READY TO MAKE IT REAL?</h2>
+        <p class="booking-intent-modal__copy">Your booking details are ready. WhatsApp is where the actual request continues; close this and it simply stays recorded as a booking attempt.</p>
+        <div class="booking-intent-modal__summary" id="bookingIntentSummary" aria-live="polite"></div>
+        <div class="booking-intent-modal__actions">
+          <a class="booking-intent-modal__action booking-intent-modal__action--primary" id="bookingWhatsappContinue" href="#" target="_blank" rel="noopener">Continue on WhatsApp <span aria-hidden="true">↗</span></a>
+          <button class="booking-intent-modal__stay" id="bookingStay" type="button">Not now</button>
+        </div>
+        <p class="booking-intent-modal__note">Starting is counted as a booking attempt. Continuing to WhatsApp is counted separately as stronger booking intent.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="location-modal" id="locationModal" aria-hidden="true">
+    <div class="location-modal__backdrop" data-location-close aria-hidden="true"></div>
+    <div class="location-modal__shell" role="dialog" aria-modal="true" aria-labelledby="locationModalTitle">
+      <div class="location-modal__wallpaper" id="locationModalWallpaper" aria-hidden="true"></div>
+      <div class="location-modal__wash" aria-hidden="true"></div>
+      <div class="location-modal__content">
+        <div class="location-modal__card" id="locationModalCard">
+          <span class="studio-location__label">RASHCUTS / STUDIO</span>
+          <h3 id="locationModalTitle">Hill-Top GRA</h3>
+          <p id="locationModalAddress">Hill-Top GRA<br>Minna, Chanchaga<br>Niger State, Nigeria</p>
+          <div class="location-modal__meta" id="locationModalMeta">HILL-TOP GRA · MINNA · CHANCHAGA</div>
+          <div class="location-modal__hours" id="locationModalHours" aria-label="Studio opening hours">
+            <span class="location-modal__hours-dot" aria-hidden="true"></span>
+            <span class="location-modal__hours-label">OPENING HOURS</span>
+            <span class="location-modal__hours-value">09:00 — 20:00</span>
+          </div>
+        </div>
+        <a class="location-modal__directions" id="locationDirections" href="#" target="_blank" rel="noopener" aria-label="Get directions to Rashcuts studio">
+          <span>GET DIRECTIONS</span><span aria-hidden="true">↗</span>
+        </a>
+        <button class="location-modal__close" id="locationModalClose" type="button" aria-label="Close studio location">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-modal" id="serviceModal" aria-hidden="true">
+    <div class="service-modal__backdrop" aria-hidden="true"></div>
+    <div class="service-modal__shell">
+      <div class="service-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle">
+        <header class="service-modal__header">
+          <span class="service-modal__index" id="serviceModalIndex"></span>
+          <span class="service-modal__eyebrow">SERVICE DETAIL</span>
+        </header>
+        <div class="service-modal__media" id="serviceModalMedia" aria-label="Service image placeholder">
+          <img id="serviceModalImage" src="" alt="" decoding="async">
+          <div class="service-modal__media-placeholder">
+            <span>IMAGE</span>
+            <strong id="serviceModalImageName">service-image.webp</strong>
+            <small>Replace this placeholder with the final service photograph.</small>
+          </div>
+        </div>
+        <div class="service-modal__content">
+          <div class="service-modal__copy">
+            <h3 id="serviceModalTitle"></h3>
+            <p id="serviceModalText"></p>
+          </div>
+          <div class="service-modal__meta">
+            <div class="service-modal__price-wrap">
+              <span>FROM</span>
+              <strong class="service-modal__price" id="serviceModalPrice"></strong>
+            </div>
+            <button class="service-modal__select" id="serviceModalSelect" type="button">Select service</button>
+          </div>
+        </div>
+      </div>
+      <button class="service-modal__close" id="serviceModalClose" type="button" aria-label="Close service detail">Close</button>
+    </div>
+  </div>
+
+  <script src="./site-config.js?v=86" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js" defer referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer referrerpolicy="no-referrer"></script>
+  <script src="./script.js?v=86" defer></script>
+</body>
+</html>

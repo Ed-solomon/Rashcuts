@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Rashcuts / Admin</title>
+  <link rel="stylesheet" href="./admin.css?v=89" />
+</head>
+<body class="admin-login-page">
+  <main class="login-shell">
+    <section class="login-card" aria-labelledby="loginTitle">
+      <div class="login-logo-wrap"><img class="login-logo" src="../assets/loader/rc-logo-render.png" alt="Rashcuts RC logo" /></div>
+      <div class="login-eyebrow"><span class="status-dot"></span> RASHCUTS / ADMIN</div>
+      <h1 id="loginTitle">ADMIN<span class="accent-dot">.</span></h1>
+      <p class="login-note">Private studio access. Your dashboard is organised as focused spatial pages for bookings, studio controls, services and gallery.</p>
+      <form id="loginForm" class="login-form" novalidate>
+        <label class="field-group" for="loginEmail"><span>Email</span><input id="loginEmail" name="loginEmail" type="email" autocomplete="username" placeholder="you@rashcuts.com" required /></label>
+        <label class="field-group" for="loginPassword"><span>Password</span><span class="password-field"><input id="loginPassword" name="loginPassword" type="password" autocomplete="current-password" placeholder="••••••••••••" required /><button type="button" id="passwordToggle" class="password-toggle" aria-label="Show password" aria-pressed="false">SHOW</button></span></label>
+        <button class="login-submit" type="submit" id="loginButton"><span>Enter dashboard</span><span aria-hidden="true">↗</span></button>
+        <p id="loginError" class="login-error hidden" role="alert"></p>
+      </form>
+      <div class="login-foot"><span>PRIVATE ACCESS</span><span>RASHCUTS / STUDIO</span></div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="../site-config.js"></script>
+  <script src="./config.js"></script>
+  <script src="./admin.js?v=89"></script>
+</body>
+</html>
